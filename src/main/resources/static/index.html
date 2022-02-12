@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>>Mancala Game</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+<div class="board">
+    <div class="section endsection">
+        <div class="pot" id="idx14">{{this.pitMap[14]}}</div>
+    </div>
+    <div class="section midsection">
+        <div class="midrow topmid">
+            <button class="pot" id="idx13" @click="pickPit('TWO',13)">{{this.pitMap[13]}}</button>
+            <button class="pot" id="idx12" @click="pickPit('TWO',12)">{{this.pitMap[12]}}</button>
+            <button class="pot" id="idx11" @click="pickPit('TWO',11)">{{this.pitMap[11]}}</button>
+            <button class="pot" id="idx10" @click="pickPit('TWO',10)">{{this.pitMap[10]}}</button>
+            <button class="pot" id="idx9" @click="pickPit('TWO',9)">{{this.pitMap[9]}}</button>
+            <button class="pot" id="idx8" @click="pickPit('TWO',8)">{{this.pitMap[8]}}</button>
+        </div>
+        <div class="midrow botmid">
+            <button class="pot" id="idx1" @click="pickPit('ONE',1)">{{this.pitMap[1]}}</button>
+            <button class="pot" id="idx2" @click="pickPit('ONE',2)">{{this.pitMap[2]}}</button>
+            <button class="pot" id="idx3" @click="pickPit('ONE',3)">{{this.pitMap[3]}}</button>
+            <button class="pot" id="idx4" @click="pickPit('ONE',4)">{{this.pitMap[4]}}</button>
+            <button class="pot" id="idx5" @click="pickPit('ONE',5)">{{this.pitMap[5]}}</button>
+            <button class="pot" id="idx6" @click="pickPit('ONE',6)">{{this.pitMap[6]}}</button>
+        </div>
+    </div>
+    <div class="section endsection">
+        <div class="pot" id="idx7">{{this.pitMap[7]}}</div>
+    </div>
+    <div class="displayApp">
+        <button class="pot" id="startGame" @click="startGame()">Start Game</button>
+        <div class="next" id="label01">Next Turn is for Player : {{ this.nextPlayer }}</div>
+        <div class="winning" id="label02">Winning Player: {{ this.winningPlayer }}</div>
+    </div>
+</div>
+
+</body>
+</html>
